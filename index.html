@@ -1,0 +1,474 @@
+<html>
+    <head>
+        <script>function getCursorPosition(event) {
+          const rightEyes = document.getElementById("Right-Eyes");
+          const leftEyes = document.getElementById("Left-Eyes");
+        
+          const x = (event.clientX * 14) / window.innerWidth + "%";
+          const y = (event.clientY * 14) / window.innerHeight + "%";
+        
+          rightEyes.style.transform = `translate(${x}, ${y})`;
+          leftEyes.style.transform = `translate(${x}, ${y})`;
+        }
+        
+        const menuOpenIcon = document.getElementById("menu-open-icon");
+        const menuCloseIcon = document.getElementById("menu-close-icon");
+        const toggleMenu = document.getElementById("navigation");
+        
+        function menuProcess() {
+          setTimeout(() => {
+            menuCloseIcon.classList.toggle("display-none");
+            menuOpenIcon.classList.toggle("display-none");
+            toggleMenu.classList.toggle("visibility-hidden");
+          }, 200);
+        }
+        </script>
+        <style>@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap");
+          @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+          
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+          
+          :root {
+            /* Footer Twitter link color */
+            --color-1: #ee7344;
+            /* Container background color */
+            --color-2: #fff;
+            /* Body background color */
+            --color-3: #e6603c;
+            /* Font color 1 */
+            --color-4: #303960;
+            /* Font color 2 */
+            --color-5: #30475e;
+            /* Font 1 */
+            --font-1: "Patrick Hand SC", cursive;
+          }
+          
+          html {
+            overflow-x: hidden;
+          }
+          
+          body {
+            font-family: var(--font-1);
+            font-size: 19px;
+            height: 100vh;
+            width: 100vw;
+            background-color: var(--color-3);
+            color: var(--color-5);
+            overflow-x: hidden;
+            display: grid;
+            grid-template-columns: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%234b04bf' fill-opacity='0.2' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          }
+          
+          .wrapper {
+            min-width: 300px;
+            max-width: 780px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: 38px;
+          }
+          
+          .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            box-shadow: 6px 0 15px rgba(0, 0, 0, 0.4);
+            background-color: var(--color-2);
+            /* If you need all page design activate it */
+            // flex: 1;
+            border-radius: 5px;
+          }
+          
+          header {
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+          }
+          
+          #toggle-menu {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            padding: 5px 0;
+            flex-wrap: wrap;
+          }
+          
+          #toggle-menu li {
+            flex: 1;
+            padding: 3px 10px;
+            outline: 1px solid red;
+            background-color: var(--color-3);
+          
+            a {
+              font-size: 22px;
+              color: var(--color-2);
+            }
+          }
+          
+          .visibility-hidden {
+            visibility: hidden;
+          }
+          
+          .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          
+          header a {
+            text-decoration: none;
+            color: var(--color-3);
+            font-weight: bold;
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+          }
+          
+          .menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          .header > div {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            align-items: center;
+          }
+          
+          .display-none {
+            display: none;
+          }
+          
+          main {
+            padding: 10px 20px;
+            flex: 1;
+          }
+          
+          footer {
+            padding: 10px 20px;
+          }
+          
+          .codepen-footer {
+            font-family: "Patrick Hand", cursive;
+            font-size: 17px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            background-color: #232323;
+            color: white;
+            text-align: center;
+            height: 38px;
+            font-size: 21px;
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 20px;
+          }
+          
+          .codepen-footer a {
+            color: #ee7344;
+            text-decoration: none;
+          }
+          
+          .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 10px;
+            position: relative;
+          }
+          
+          .info {
+            flex: 1;
+          }
+          
+          .header-info-container {
+            text-align: center;
+            color: var(--color-4);
+          }
+          
+          .icon {
+            margin: 0 auto;
+            position: relative;
+          }
+          
+          .icon svg {
+            min-width: 200px;
+            width: 100%;
+          }
+          
+          .details-info-container {
+            padding: 10px 20px;
+            font-size: 20px;
+          
+            p:first-child {
+              font-size: 32px;
+            }
+          
+            p:last-child {
+              margin-block: 10px;
+              line-height: 1.5;
+              min-width: 280px;
+            }
+          }
+          
+          .emoji {
+            font-size: 36px;
+          }
+          
+          .bg-robot {
+            background-image: url("https://assets.codepen.io/9277864/ai-robot-2.svg");
+            background-size: cover;
+            opacity: 0.2;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: -2%;
+            left: 10%;
+          }
+          
+          .bg-image {
+            background-image: url("https://assets.codepen.io/9277864/155.svg");
+            background-size: cover;
+            opacity: 0.3;
+            width: 110px;
+            height: 110px;
+            position: absolute;
+            top: 0;
+            left: 35%;
+          }
+          
+          @keyframes blinker {
+            50% {
+              opacity: 0;
+            }
+          }
+          
+          @keyframes skills {
+            0% {
+              content: "HTML";
+            }
+            25% {
+              content: "CSS";
+            }
+            50% {
+              content: "JS";
+            }
+            75% {
+              content: "React";
+            }
+            100% {
+              content: "Vue";
+            }
+          }
+          
+          .icon::after {
+            content: "";
+            display: block;
+            width: 100px;
+            hegith: 50px;
+            font-size: 37px;
+            color: var(--color-3);
+            position: absolute;
+            top: 47%;
+            left: 8%;
+            animation: blinker 3s step-end infinite, skills 10s step-end infinite;
+          }
+          
+          @media only screen and (max-width: 621px) {
+            .bg-image {
+              top: 41%;
+              left: 0;
+            }
+          
+            #toggle-menu {
+              gap: 15px;
+          
+              a {
+                font-size: 21px;
+              }
+            }
+          }
+          
+          @media only screen and (max-width: 520px) {
+            main,
+            footer,
+            header {
+              padding: 10px;
+            }
+          
+            .flex-container {
+              gap: 2px;
+            }
+          
+            .details-info-container {
+              padding: 10px;
+            }
+          
+            #toggle-menu {
+              gap: 10px;
+            }
+          
+            #toggle-menu li {
+              padding: 0 8px;
+            }
+          }
+          
+          @media only screen and (max-width: 420px) {
+            .icon svg {
+              width: 225px;
+            }
+          
+            .bg-image {
+              display: none;
+            }
+          
+            #toggle-menu li {
+              padding: 0 6px;
+            }
+          }
+          
+          @media only screen and (max-width: 320px) {
+            .icon svg {
+              width: 200px;
+            }
+          
+            #toggle-menu li {
+              padding: 0 4px;
+            }
+          }
+          </style>
+    </head>
+<body onmousemove="getCursorPosition(event)">
+  <div class="wrapper">
+    <div class="container">
+      <header>
+        <div class="header">
+          <p>
+            <a href="/">BAGGA</a>
+          </p>
+          <div>
+            <a href="https://twitter.com/AlgoJas">
+              <img src="https://assets.codepen.io/9277864/computer-logo-square-social-twitter.svg" alt="Twitter Icon" width="36" height="36" />
+            </a>
+            <button class="menu" onClick="menuProcess()">
+              <img src="https://assets.codepen.io/9277864/menu-navigation.svg" alt="Menu Open Icon" width="36" height="36" id="menu-open-icon" />
+              <img src="https://assets.codepen.io/9277864/navigation-double-arrow-down-1.svg" alt="Menu Close Icon" width="36" height="36" class="display-none" id="menu-close-icon" />
+            </button>
+          </div>
+        </div>
+        <nav id="navigation" class="visibility-hidden">
+          <ul id="toggle-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Experience</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div class="flex-container">
+          <div class="bg-robot"></div>
+          <div class="bg-image"></div>
+          <div class="icon">
+            <svg width="250" height="250" viewBox="0 0 370 370" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="136 1">
+                <g id="Scenes">
+                  <path id="Vector" d="M354.91 220.65C354.91 322.08 279.75 325.83 187.04 325.83C94.33 325.83 19.18 322.08 19.18 220.65C19.18 119.22 94.33 37 187.04 37C279.75 37 354.91 119.23 354.91 220.65Z" fill="#FFE9BD" />
+                  <path id="Vector_2" d="M288.44 256.47C305.897 242.333 318.212 222.84 323.483 201.004C328.753 179.168 326.686 156.203 317.599 135.66C308.513 115.116 292.913 98.1367 273.212 87.3456C253.51 76.5544 230.803 72.5522 208.599 75.9572C186.395 79.3623 165.931 89.9852 150.368 106.184C134.806 122.383 125.011 143.257 122.498 165.579C119.986 187.902 124.895 210.43 136.466 229.684C148.038 248.937 165.629 263.844 186.52 272.1C150.52 279.43 118.07 287.57 117.14 293.27C115.02 306.27 126.66 310.71 126.66 310.71H190.56L186.15 324H295.3C322.84 307.07 316.31 269.56 288.44 256.47Z" fill="white" />
+                  <path id="Vector_3" d="M266.27 187.26C266.271 198.959 270.374 210.288 277.865 219.274C285.357 228.26 295.762 234.334 307.27 236.44C317.417 222.237 323.765 205.676 325.711 188.33C327.657 170.984 325.137 153.428 318.39 137.33H316.27C303.021 137.33 290.314 142.588 280.939 151.95C271.565 161.312 266.289 174.011 266.27 187.26Z" fill="#E0E0E0" />
+                  <path id="Vector_4" d="M184.66 237.26C212.274 237.26 234.66 214.874 234.66 187.26C234.66 159.646 212.274 137.26 184.66 137.26C157.046 137.26 134.66 159.646 134.66 187.26C134.66 214.874 157.046 237.26 184.66 237.26Z" fill="#E0E0E0" />
+                  <path id="Vector_5" d="M224.12 74.73C201.474 74.7335 179.47 82.2548 161.56 96.114C143.65 109.973 130.847 129.386 125.161 151.307C119.475 173.227 121.227 196.415 130.142 217.233C139.057 238.05 154.631 255.319 174.42 266.33C143.99 211.16 156.94 180.33 156.94 180.33H326.32C326.32 179.23 326.37 178.13 326.37 177.02C326.375 163.589 323.734 150.289 318.598 137.878C313.462 125.468 305.931 114.192 296.436 104.692C286.94 95.1935 275.667 87.6582 263.259 82.5172C250.85 77.3761 237.551 74.73 224.12 74.73Z" fill="#E0E0E0" />
+                  <path id="Vector_6" d="M295.3 324.04C322.84 307.04 316.3 269.56 288.44 256.47C305.897 242.333 318.212 222.84 323.483 201.004C328.753 179.168 326.686 156.203 317.599 135.66C308.513 115.116 292.913 98.1367 273.212 87.3456C253.51 76.5544 230.803 72.5522 208.599 75.9572C186.395 79.3623 165.931 89.9852 150.368 106.184C134.806 122.383 125.011 143.257 122.498 165.579C119.986 187.902 124.895 210.43 136.466 229.684C148.038 248.937 165.629 263.844 186.52 272.1C150.52 279.43 118.07 287.57 117.14 293.27C115.02 306.27 126.66 310.71 126.66 310.71H190.56L186.15 324" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_7" d="M224.12 84.96C229.77 84.96 234.35 80.3799 234.35 74.73C234.35 69.0801 229.77 64.5 224.12 64.5C218.47 64.5 213.89 69.0801 213.89 74.73C213.89 80.3799 218.47 84.96 224.12 84.96Z" fill="#FF512E" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_8" d="M88.13 151.42H125.13C131.133 128.172 145.124 107.776 164.652 93.8072C184.181 79.8378 208.003 73.185 231.944 75.0142C255.885 76.8433 278.419 87.0378 295.599 103.812C312.779 120.586 323.509 142.87 325.91 166.76H88.13C86.0958 166.76 84.1449 165.952 82.7065 164.514C81.2681 163.075 80.46 161.124 80.46 159.09C80.46 157.056 81.2681 155.105 82.7065 153.666C84.1449 152.228 86.0958 151.42 88.13 151.42Z" fill="#FF866E" />
+                  <path id="Vector_9" d="M269.08 166.76V159.09C269.081 158.418 268.95 157.753 268.694 157.131C268.438 156.51 268.061 155.946 267.587 155.47C267.112 154.995 266.548 154.617 265.928 154.36C265.307 154.102 264.642 153.97 263.97 153.97H226.9V166.76H269.08Z" fill="#FF512E" />
+                  <path id="Vector_10" d="M134.53 166.76H139.64C146.715 142.759 160.821 121.43 180.139 105.526C199.456 89.6221 223.097 79.874 248.01 77.54C221.927 71.2988 194.437 75.5424 171.451 89.3582C148.464 103.174 131.818 125.459 125.09 151.42H88.09C86.0558 151.42 84.1049 152.228 82.6665 153.666C81.2281 155.105 80.42 157.056 80.42 159.09C80.42 161.124 81.2281 163.075 82.6665 164.514C84.1049 165.952 86.0558 166.76 88.09 166.76H134.53Z" fill="#FFCABF" />
+                  <path id="Vector_11" d="M125.09 151.42H88.09C86.0558 151.42 84.1049 152.228 82.6665 153.666C81.2281 155.105 80.42 157.056 80.42 159.09C80.42 161.124 81.2281 163.075 82.6665 164.514C84.1049 165.952 86.0558 166.76 88.09 166.76H122.33C122.852 161.583 123.775 156.454 125.09 151.42Z" fill="#FF512E" />
+                  <path id="Vector_12" d="M88.13 151.42H125.13C131.133 128.172 145.124 107.776 164.652 93.8072C184.181 79.8378 208.003 73.185 231.944 75.0142C255.885 76.8433 278.419 87.0378 295.599 103.812C312.779 120.586 323.509 142.87 325.91 166.76H88.13C86.0958 166.76 84.1449 165.952 82.7065 164.514C81.2681 163.075 80.46 161.124 80.46 159.09C80.46 157.056 81.2681 155.105 82.7065 153.666C84.1449 152.228 86.0958 151.42 88.13 151.42Z" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_13" d="M226.9 153.97C226.9 149.902 228.516 146 231.393 143.123C234.27 140.246 238.172 138.63 242.24 138.63C246.308 138.63 250.21 140.246 253.087 143.123C255.964 146 257.58 149.902 257.58 153.97H226.9Z" fill="#E0E0E0" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <g id="Vector_14">
+                    <path d="M123.54 158.45C123.973 156.117 124.477 153.817 125.05 151.55Z" fill="white" />
+                    <path d="M123.54 158.45C123.973 156.117 124.477 153.817 125.05 151.55" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                  <path id="Vector_15" d="M257.58 153.97H263.97C264.642 153.97 265.307 154.102 265.928 154.36C266.548 154.617 267.112 154.995 267.587 155.47C268.061 155.946 268.438 156.51 268.694 157.131C268.95 157.753 269.081 158.418 269.08 159.09V166.76M235.21 211.01L238.4 204.66C238.4 209.55 244.13 213.52 251.19 213.52C258.25 213.52 263.97 209.52 263.97 204.66L267.25 211.45" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <g id="Right-Eyes-Gr">
+                    <path id="Right-Eyes-Circle" d="M310.71 228.87C334.712 228.87 354.17 209.412 354.17 185.41C354.17 161.408 334.712 141.95 310.71 141.95C286.708 141.95 267.25 161.408 267.25 185.41C267.25 209.412 286.708 228.87 310.71 228.87Z" fill="white" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                    <path id="Right-Eyes" d="M287.5 171C292.747 171 297 166.747 297 161.5C297 156.253 292.747 152 287.5 152C282.253 152 278 156.253 278 161.5C278 166.747 282.253 171 287.5 171Z" fill="#45413C" />
+                  </g>
+                  <g id="Left-Eyes-Gr">
+                    <path id="Left-Eyes-Circle" d="M190.56 228.87C214.562 228.87 234.02 209.412 234.02 185.41C234.02 161.408 214.562 141.95 190.56 141.95C166.558 141.95 147.1 161.408 147.1 185.41C147.1 209.412 166.558 228.87 190.56 228.87Z" fill="white" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                    <path id="Left-Eyes" d="M166 171C171.523 171 176 166.747 176 161.5C176 156.253 171.523 152 166 152C160.477 152 156 156.253 156 161.5C156 166.747 160.477 171 166 171Z" fill="#45413C" />
+                  </g>
+                  <path id="Vector_16" d="M26.25 324.04H281.26M262.43 271.82C271.809 268.02 280.572 262.847 288.43 256.47M186.51 272.1C189.63 273.333 192.817 274.413 196.07 275.34" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_17" d="M216.21 280.88C216.096 280.645 216.047 280.385 216.066 280.125C216.085 279.865 216.173 279.615 216.32 279.4C216.467 279.182 216.67 279.008 216.908 278.896C217.145 278.783 217.408 278.736 217.67 278.76C227.493 279.415 237.355 278.421 246.85 275.82C247.108 275.744 247.382 275.739 247.643 275.808C247.903 275.877 248.14 276.016 248.326 276.21C248.513 276.404 248.643 276.645 248.702 276.908C248.761 277.171 248.746 277.445 248.66 277.7C247.07 282.65 242.66 292.89 233.39 293.7C224.12 294.51 218.4 285.33 216.21 280.88Z" fill="#E0E0E0" />
+                  <path id="Vector_18" d="M92.02 312.33C92.1255 311.878 92.3801 311.474 92.7428 311.184C93.1056 310.893 93.5554 310.734 94.02 310.73H186.62V324.02H91.89C91.5789 324.019 91.272 323.949 90.9923 323.812C90.7125 323.676 90.4673 323.479 90.2748 323.234C90.0824 322.99 89.9478 322.705 89.8811 322.401C89.8145 322.097 89.8175 321.782 89.89 321.48L92.02 312.33Z" fill="#BDBEC0" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_19" d="M168.44 312.33C168.549 311.879 168.804 311.477 169.166 311.188C169.528 310.898 169.976 310.737 170.44 310.73H199.44C199.905 310.734 200.354 310.893 200.717 311.184C201.08 311.474 201.335 311.878 201.44 312.33L203.58 321.48C203.652 321.782 203.656 322.097 203.589 322.401C203.522 322.705 203.388 322.99 203.195 323.234C203.003 323.479 202.757 323.676 202.478 323.812C202.198 323.949 201.891 324.019 201.58 324.02H165.76L168.44 312.33Z" fill="#87898C" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_20" d="M97.76 324.04H60.51C60.0816 324.04 59.6593 323.938 59.278 323.743C58.8967 323.548 58.5674 323.264 58.3173 322.916C58.0672 322.569 57.9034 322.166 57.8395 321.743C57.7757 321.319 57.8135 320.886 57.95 320.48L61.52 309.92C61.7013 309.387 62.0446 308.925 62.5018 308.596C62.959 308.268 63.5073 308.091 64.07 308.09H97.76V324.04Z" fill="#BDBEC0" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_21" d="M178.38 293.27C178.38 294.7 177.812 296.07 176.801 297.081C175.79 298.092 174.42 298.66 172.99 298.66H149.17V186.13H172.99C174.42 186.13 175.79 186.698 176.801 187.709C177.812 188.72 178.38 190.09 178.38 191.52V293.27Z" fill="#87898C" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_22" d="M159.75 186.13H20.39C17.4132 186.13 15 188.543 15 191.52V293.26C15 296.237 17.4132 298.65 20.39 298.65H159.75C162.727 298.65 165.14 296.237 165.14 293.26V191.52C165.14 188.543 162.727 186.13 159.75 186.13Z" fill="#F0F0F0" />
+                  <path id="Vector_23" d="M165.14 196.33V191.54C165.143 190.11 164.578 188.736 163.569 187.722C162.56 186.708 161.19 186.135 159.76 186.13H20.39C18.9613 186.133 17.5919 186.701 16.5816 187.712C15.5714 188.722 15.0026 190.091 15 191.52V196.33H165.14Z" fill="white" />
+                  <path id="Vector_24" d="M159.75 186.13H20.39C17.4132 186.13 15 188.543 15 191.52V293.26C15 296.237 17.4132 298.65 20.39 298.65H159.75C162.727 298.65 165.14 296.237 165.14 293.26V191.52C165.14 188.543 162.727 186.13 159.75 186.13Z" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_25" d="M104.08 308.09L100.22 252.54C100.037 249.81 98.8246 247.251 96.8269 245.382C94.8293 243.512 92.196 242.472 89.46 242.47H82.76C80.0363 242.47 77.4137 243.502 75.4194 245.357C73.4252 247.212 72.2071 249.753 72.01 252.47L67.41 318.33C67.3665 319.061 67.4724 319.793 67.7212 320.482C67.97 321.17 68.3566 321.801 68.8572 322.335C69.3578 322.87 69.9621 323.296 70.6331 323.589C71.3041 323.883 72.0278 324.036 72.76 324.04H136.54C136.984 324.045 137.423 323.94 137.816 323.735C138.21 323.529 138.547 323.229 138.796 322.862C139.046 322.494 139.2 322.071 139.246 321.629C139.292 321.187 139.228 320.741 139.06 320.33L135.86 309.77C135.66 309.273 135.316 308.848 134.872 308.548C134.429 308.249 133.905 308.089 133.37 308.09H104.08Z" fill="#E0E0E0" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_26" d="M104.08 308.09L104.41 313.01M117.14 308.09L120.52 324.04" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_27" d="M85.84 293.26C90.3025 293.26 93.92 289.642 93.92 285.18C93.92 280.718 90.3025 277.1 85.84 277.1C81.3776 277.1 77.76 280.718 77.76 285.18C77.76 289.642 81.3776 293.26 85.84 293.26Z" fill="white" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_28" d="M26.25 287.1V275.96M35.05 287.1V275.96M43.85 287.1V275.96" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="Vector_29" d="M260.16 256.68C260.342 255.917 260.218 255.112 259.815 254.439C259.411 253.766 258.759 253.278 258 253.08L251 251.32C250.238 251.137 249.435 251.26 248.762 251.662C248.089 252.063 247.6 252.712 247.4 253.47L234.4 304.88L247.13 308.09L260.16 256.68Z" fill="#525252" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <g id="Vector_30">
+                    <path d="M275.46 295.56C264.34 302.98 222.15 290.62 217.34 308.09C212.23 326.65 232.24 332.56 259.7 332.56C289.08 332.56 305.23 320.56 310.75 305.82" fill="white" />
+                    <path d="M275.46 295.56C264.34 302.98 222.15 290.62 217.34 308.09C212.23 326.65 232.24 332.56 259.7 332.56C289.08 332.56 305.23 320.56 310.75 305.82" stroke="#45413C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="info">
+            <div class="header-info-container">
+              <h1>JASKIRAT SINGH BAGGA</h1>
+              <p>SOFTWARE DEVELOPER
+                <br>[PYTHON, JAVA, SOLIDITY, AI, MACHINE LEARNING]
+              </p>
+              <img src="https://assets.codepen.io/9277864/mood-rock.svg" alt="Rock" widht="25" height="25" />
+            </div>
+            <div class="details-info-container">
+              <p>
+                <span class="emoji">🙋‍♂️</span> Hey,
+              </p>
+              <p>Hey there 👋 I'm Jaskirat, a BTech undergrad 🎓 passionate about blockchain 🔗, AI 🤖, and machine learning 📈. Always down to brainstorm ideas 💡 and collaborate on projects! Looking to build an inclusive network 🤝 and develop meaningful products using future-forward tech. Let's innovate together! 🚀In my free time, I'm all about understanding enterprise strategies 🏢, supporting local communities 🏘️, and grabbing chai ☕️. DM me to connect!</p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          * You can reach out to me via Twitter to say "Hi!" and If we connect, that will make me even much happier.
+        </p>
+      </footer>
+    </div>
+  </div>
+  <div class="codepen-footer">
+    <small>Created by <a href="https://twitter.com/AlgoJas" target="_top">@AlgoJas</a></small>
+    <small><a href="https://jaskiratbagga.github.io/jaskirat.portfolio.io/" target="_top">Go to My Website</a></small>
+  </div>
+</body>
+</html>
